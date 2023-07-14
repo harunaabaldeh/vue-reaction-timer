@@ -20,14 +20,13 @@ export default {
     },
     stopTimer() {
       clearInterval(this.timer);
-      console.log(this.reactionTime);
+      this.$emit("end", this.reactionTime);
     },
   },
   mounted() {
-    console.log("component mounted");
     setTimeout(() => {
       this.showBlock = true;
-      console.log(this.delay);
+      this.startTimer();
     }, this.delay);
   },
 };
